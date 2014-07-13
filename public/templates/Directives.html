@@ -1,0 +1,67 @@
+﻿<div class="row">
+    <div data-accordion="" data-close-others="true">
+        <div data-accordion-group="" data-heading="A Basic Directive">
+            <div data-greet-person="text"></div>
+            <br />
+
+            <input type="text" data-ng-model="text" />
+
+            <script type="text/ng-template" id="greetingTempl.html">
+                        Hello, <span></span>
+            </script>
+        </div>
+
+        <div data-accordion-group="" data-heading="Form validation">
+            <form novalidate="" name="itemForm">
+                <table>
+                    <tr>
+                        <td>Name: </td>
+                        <td>
+                            <input name="name" type="text" data-ng-model="item.Name" required="required" data-ng-pattern="name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Price: </td>
+                        <td>
+                            <input name="price" type="text" data-ng-model="item.Price" required="required" data-valid-price="" /></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity: </td>
+                        <td>
+                            <input name="quantity" type="number" data-ng-model="item.Quantity" min="1" max="90" data-ng-pattern="integerval" required="required" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Add" data-ng-click="addItem(item)" data-ng-disabled="itemForm.$invalid" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div data-ng-show="itemForm.name.$dirty && itemForm.name.$invalid">
+                <span data-ng-show="itemForm.name.$error.required">Name cannot be left blank</span>
+                <span data-ng-show="itemForm.name.$error.pattern">Name cannot contain numbers or special characters</span>
+            </div>
+            <div data-ng-show="itemForm.price.$dirty && itemForm.price.$invalid">
+                <span data-ng-show="itemForm.price.$error.required">Price cannot be blank</span>
+                <span data-ng-show="itemForm.price.$error.validPrice">Price should be a number between 50 and 5000 with maximum 2 digits after decimal point</span>
+            </div>
+            <div data-ng-show="itemForm.quantity.$dirty && itemForm.quantity.$invalid">
+                <span data-ng-show="itemForm.quantity.$error.required">Quantity cannot be blank</span>
+                <span data-ng-show="itemForm.quantity.$error.pattern || itemForm.quantity.$error.min || itemForm.quantity.$error.max">Quantity should be an integer between 1 and 90</span>
+            </div>
+        </div>
+
+        <div data-accordion-group="">
+            <div data-accordion-heading="">
+                jQuery UI Calendar <i class="icon-check"></i>
+            </div>
+            <input type="text" data-date-picker="" data-ng-model="date" />
+            <br />
+            <span>{{date}}</span>
+            <br />
+            <span>{{someVal}}</span>
+            <input type="button" value="Increment Value" data-ng-click="increment()" />
+
+        </div>
+
+    </div>
+</div>
