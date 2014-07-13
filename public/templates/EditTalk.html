@@ -1,0 +1,49 @@
+﻿<div class="row">
+    <form name="newTalkForm" novalidate="">
+        <table style="width: 50%">
+            <tr>
+                <td>Title: </td>
+                <td>
+                    <!--<input name="title" type="text" data-ng-model="talk.title" />-->
+                    <span>{{talk.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Speaker: </td>
+                <td>
+                    <input name="speaker" type="text" data-ng-model="talk.speaker" />
+                </td>
+            </tr>
+            <tr>
+                <td>Category: </td>
+                <td>
+                    <select name="category" data-ng-model="talk.category" data-ng-options="c for c in categories"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Duration: </td>
+                <td>
+                    <input name="duration" type="text" data-ng-model="talk.duration" />
+                </td>
+            </tr>
+            <tr>
+                <td>Level: </td>
+                <td>
+                    <select name="level" data-ng-options="l for l in levels" data-ng-model="talk.level" ></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Rating: </td>
+                <td>
+                    <select name="rating" data-ng-options="r for r in ratings" data-ng-model="talk.rating"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary" data-ng-click="editTalk()">Edit</button></td>
+                <td>
+                    <button type="button" class="btn btn-danger" data-ng-click="deleteTalk()">Delete</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
