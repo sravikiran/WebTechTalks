@@ -80,6 +80,14 @@ app.get('/', function(request, response){
     response.sendfile('views/Home.html');
 });
 
+app.get('/tests', function(request, response){
+    response.sendfile('public/tests/TestRunner.html');
+});
+
+app.get('/sampleTests', function(request, response){
+    response.sendfile('public/tests/SampleTestRunner.html');
+});
+
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.listen(3000);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <!-- Jasmine stylesheet -->
+    <link href="styles/jasmine.css" rel="stylesheet" />
+
+    <!-- Jasmine scripts -->
+    <script src="scripts/jasmine.js"></script>
+    <script src="scripts/jasmine-html.js"></script>
+
+    <!-- Angular and mocks -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="scripts/jquery-ui-1.10.3.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular-animate.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular-mocks.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+
+    <script src="app/directives.js"></script>
+    <script src="app/techTalksApp.js"></script>
+    <script src="app/controllers/HomeCtrl.js"></script>
+    <script src="app/controllers/AddTalkCtrl.js"></script>
+    <script src="app/controllers/EditTalkCtrl.js"></script>
+    <script src="app/controllers/AddTalkCtrl.js"></script>
+    <script src="app/controllers/DirectivesCtrl.js"></script>
+    <script src="app/services/techTalkDataSvc.js"></script>
+    <script src="app/directives/busyIndicator.js"></script>
+    <script src="app/directives/uniqueTechTalk.js"></script>
+
+    <!-- Test scripts -->
+    <script src="tests/HomeControllerSpec.js"></script>
+    <script src="tests/TechTalkDataSvcSpec.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+    jasmine.getEnv().execute();
+</script>
+</body>
+</html>
