@@ -1,0 +1,29 @@
+{
+  "name": "WebTechTalks",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sravikiran/WebTechTalks",
+  "authors": [
+    "srirangr <Rabikiran.Srirangam@adp.com>"
+  ],
+  "description": "Sample app",
+  "keywords": [
+    "Angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.20",
+    "angular-route": "1.2.20",
+    "angular-animate": "1.2.20",
+    "angular-mocks": "1.2.20",
+    "bootstrap": "~3.2.0",
+    "jquery-ui": "~1.11.0",
+    "angular-bootstrap": "0.10.0"
+  }
+}

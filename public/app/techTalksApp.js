@@ -1,4 +1,4 @@
-var app = angular.module("techTalkApp", ['ngRoute', 'ngAnimate', 'myDirectives']);
+var app = angular.module("techTalkApp", ['ngRoute', 'ngAnimate', 'myDirectives', 'myTemplates']);
 
 app.constant('staticValues', {
     categories: ["JavaScript", "jQuery", "HTML5", "CSS3", "Design"],
@@ -7,10 +7,10 @@ app.constant('staticValues', {
 });
 
 app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/list', { templateUrl: 'templates/TalkList.html', controller: 'HomeCtrl' })
-        .when('/add', { templateUrl: 'templates/AddTalk.html', controller: 'AddTalkCtrl' })
-        .when('/edit/:title', { templateUrl: 'templates/EditTalk.html', controller: 'EditTalkCtrl' })
-        .when('/directives', { templateUrl: 'templates/Directives.html', controller: 'DirectivesCtrl' })
+    $routeProvider.when('/list', { templateUrl: 'public/templates/TalkList.html', controller: 'HomeCtrl' })
+        .when('/add', { templateUrl: 'public/templates/AddTalk.html', controller: 'AddTalkCtrl' })
+        .when('/edit/:title', { templateUrl: 'public/templates/EditTalk.html', controller: 'EditTalkCtrl' })
+        .when('/directives', { templateUrl: 'public/templates/Directives.html', controller: 'DirectivesCtrl' })
         .otherwise({ redirectTo: '/list' });
 });
 
@@ -19,4 +19,3 @@ app.filter('duration', function () {
         return item + " Hr";
     };
 });
-

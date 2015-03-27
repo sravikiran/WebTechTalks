@@ -24,14 +24,13 @@ describe('HomeController Tests', function(){
 
         windowMock = {
             alertMessage: "",
-            location: { href: "" },
-            alert: jasmine.createSpy('alert').andCallFake(function (msg) {
+            alert: jasmine.createSpy('alert').and.callFake(function (msg) {
                 this.alertMessage = msg;
             })
         };
 
         techTalksDataMock = {
-            getAllTalks: jasmine.createSpy('getAllTalks').andCallFake(function(){
+            getAllTalks: jasmine.createSpy('getAllTalks').and.callFake(function(){
                 if(passPromise){
                     return q.when(talks);
                 }
@@ -49,6 +48,7 @@ describe('HomeController Tests', function(){
         function createController() {
             homeScope = scope.$new();
             homeCtrl = controller('HomeCtrl', { $scope: homeScope, $window: windowMock, techTalkDataSvc: techTalksDataMock });
+            controller('AddTalkCtrl',{ $scope: homeScope, $window: windowMock, techTalkDataSvc: techTalksDataMock });
         }
 
         beforeEach(function () {

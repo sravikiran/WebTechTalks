@@ -2,14 +2,13 @@ var app = angular.module("myDirectives", ['ui.bootstrap']);
 
 app.directive("greetPerson", function ($parse) {
     return {
-        templateUrl: "greetingTempl.html",
+        templateUrl: "public/templates/greetingTempl.html",
         link: function (scope, elem, attrs, ctrl) {
             var exp = $parse(attrs.greetPerson);
             function setGreetingMessage() {
                 angular.element(elem.children()[0]).text(exp(scope));
-
             }
-            //setGreetingMessage();
+
             scope.$watch(exp, function () {
                 setGreetingMessage();
             });

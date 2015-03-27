@@ -1,4 +1,6 @@
-angular.module("techTalkApp").controller("HomeCtrl", function ($scope, $window, techTalkDataSvc) {
+angular.module("techTalkApp")
+
+    .controller("HomeCtrl", function ($scope, $window, techTalkDataSvc) {
 
     $scope.getTalks=function() {
         $scope.isListLoaded = false;
